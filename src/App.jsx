@@ -9,17 +9,21 @@ function App() {
   const [readingTime,setReadingTime] =useState(0)
 
   const handleBookMarks=(blog)=>{
-    console.log('Book Marks Adding soon')
-    console.log(blog)
+    // console.log('Book Marks Adding soon')
+    // console.log(blog)
     const newBookMarks=[...bookmarks,blog]
     setBookmarks(newBookMarks)
   }
-  const handleReadingTime=(time)=>{
-    console.log('reading time', time)
+  const handleReadingTime=(time,id)=>{
+    // console.log(id)
+    // console.log('reading time', time)
     // console.log('hi ki obosta')
     const newReadingTime=readingTime+time 
     setReadingTime(newReadingTime)
     // setReadingTime(newReadingTime)
+    // remove the blog from bookMarks
+    const remaining=bookmarks.filter(bookmark=>bookmark.id !== id)
+    setBookmarks(remaining)
 
   }
 

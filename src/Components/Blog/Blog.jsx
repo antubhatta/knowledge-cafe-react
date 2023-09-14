@@ -4,7 +4,7 @@ export default function Blog({blog,handleBookMarks, handleReadingTime}){
     // console.log(blog)
     // console.log(handleBookMarks)
     // console.log(handleReadingTime)
-    const {title,cover,author,author_img,reading_time,posted_date,hashtags}=blog;
+    const {id,title,cover,author,author_img,reading_time,posted_date,hashtags}=blog;
     return (
         <div className="mb-20">
            
@@ -28,7 +28,7 @@ export default function Blog({blog,handleBookMarks, handleReadingTime}){
                 hashtags.map((hash,idx)=><span key={idx}><a href=""> {hash}</a></span>)
             }
             <div className='mt-5'>
-                <button onClick={()=>handleReadingTime(reading_time)} className='text-base text-[#6047EC] font-semibold underline'>Mark as read</button>
+                <button onClick={()=>handleReadingTime(reading_time,id)} className='text-base text-[#6047EC] font-semibold underline'>Mark as read</button>
         
             </div>
             
